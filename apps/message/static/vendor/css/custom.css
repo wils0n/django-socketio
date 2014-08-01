@@ -39,5 +39,16 @@
 }
 
 .ns-type-notify{
-     padding: 30px;
+    padding: 30px;
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #ffffff
+}
+
+.ns-box{
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.ns-effect-slidetop{
+    box-shadow: inset 4.5em 0 rgba(162, 162, 162, 0.6);
 }
