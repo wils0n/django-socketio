@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+      var socket = io.connect('{{socketioURL}}');
+
+      socket.on('message', function(data){
+        var message = data;
+        setTimeout( function() {
+            // create the notification
+            var notification = new NotificationFx({
+                message : '<span class="icon icon-megaphone">' + '<p>'+message.data+'</p>',
+                layout : 'bar',
+                effect : 'slidetop',
+                type : 'notify', // notice, warning or error
+                ttl: 25000
+            });
+
+            // show the notification
+            notification.show();
+
+        }, 1200 );
+
+      });
+
+  });
+</script>

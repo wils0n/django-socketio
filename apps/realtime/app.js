@@ -5,9 +5,10 @@ var io = require('socket.io').listen(server);
 
 io.on('connection', function(socket){
     console.log('a user connect');
-	/*socket.on('message', function(msg){
-		io.emit('message', msg);
-	});*/
+	socket.on('message', function(msg){
+		console.log(msg);
+        socket.broadcast.emit('message', msg);
+	});
 });
 
 server.listen(3000, function() {

@@ -1,13 +1,24 @@
 {% extends 'message/base-message.html' %}
 
 {% block contentMessage %}
+    <div class="container">
+        <form role="form">
+          <div class="form-group">
+            <textarea class="form-control" rows="3" id="contentNotify"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="sendNotify">Submit</button>
+        </form>
+    </div>
+
     <script type="text/javascript" src="{{socketioURL}}/socket.io/socket.io.js"></script>
-      <script type="text/javascript">
+    <script type="text/javascript">
       $(document).ready(function () {
-        var socket = io.connect('{{socketioURL}}');
-        /*socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', { my: 'data' });
-        });*/
+          var socket = io.connect('{{socketioURL}}');
+          $( "#sendNotify" ).on( "click", function() {
+            var msg = $('#contentNotify').val();
+            socket.emit('message', { 'data': msg });
+          });
+
+      });
     </script>
 {% endblock %}

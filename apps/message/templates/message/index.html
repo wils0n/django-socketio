@@ -1,16 +1,6 @@
 {% extends 'message/base-message.html' %}
 
 {% block contentMessage %}
-    ss
     <script type="text/javascript" src="{{socketioURL}}/socket.io/socket.io.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function () {
-          var socket = io.connect('{{socketioURL}}');
-          console.log('ingreso');
-          /*socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', { my: 'data' });
-        });*/
-      });
-    </script>
+    {% include 'message/receive-notify.html' %}
 {% endblock %}

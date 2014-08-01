@@ -6,4 +6,5 @@ from django.views.generic import *
 
 urlpatterns = patterns('',
                        url(r'^$', TestView.as_view()),
+                       url(r'^send/message/$', SendMessageView.as_view()),
                        )
