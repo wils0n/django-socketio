@@ -1,0 +1,13 @@
+{
+  "name": "notify",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "redis": "^0.11.0",
+    "restify": "^2.8.1",
+    "socket.io": "^1.0.6"
+  }
+}

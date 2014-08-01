@@ -94,3 +94,9 @@ TEMPLATE_DIRS = (
 from django.core.urlresolvers import reverse_lazy
 
 LOGIN_URL = reverse_lazy('auth_login_external')
+
+import django.conf.global_settings as DEFAULT_SETTINGS
+
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    "apps.context_processor.socketioURLL",
+)
